@@ -31,7 +31,8 @@ if "%CHOICE%"=="0" goto end
 goto menu
 
 :run
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "Unblock-File -LiteralPath '%~dp0src\Invoke-AutopilotSafeRecovery.ps1' -ErrorAction SilentlyContinue; & '%~dp0src\Invoke-AutopilotSafeRecovery.ps1' %ARGS%"
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "Unblock-File -LiteralPath '%~dp0src\Invoke-AutopilotSafeRecovery.ps1' -ErrorAction SilentlyContinue"
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0src\Invoke-AutopilotSafeRecovery.ps1" %ARGS%
 echo.
 pause
 goto menu
